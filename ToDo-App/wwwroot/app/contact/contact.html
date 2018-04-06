@@ -1,0 +1,26 @@
+﻿
+<h1>Contact Me!</h1>
+        <img class="hidden-xs" width="200" height="200" src="https://scontent-dft4-2.xx.fbcdn.net/v/t1.0-9/12189087_979770468725299_4054796271002351625_n.jpg?oh=ac01ab7808385968062f98eadec0eb45&oe=593F0893" />
+        <div ng-show="contact.isSubmitted">Thanks Yo</div>
+        <form ng-hide="contact.isSubmitted">
+            <div class="form-group">
+                <label>Name:</label>
+                <input required class="form-control" type="text" name="name" ng-model="contact.contact.name" />
+            </div>
+ 
+            <div class="form-group">
+                <label>Email:</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-envelope-square"></i></div>
+                    <input class="form-control" type="email" name="email" ng-model="contact.contact.email" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Comments:</label>
+                <textarea class="form-control" name="comments" ng-model="contact.contact.comments"></textarea>
+            </div>
+
+            <button class="btn-primary" ng-click="contact.sendToMe()">Send</button>
+
+        </form>

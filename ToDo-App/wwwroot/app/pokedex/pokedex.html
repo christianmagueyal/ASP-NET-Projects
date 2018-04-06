@@ -1,0 +1,29 @@
+﻿<div ng-if="pokedex.loading">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading... Here you would want to freeze and keep user from clicking and stuff</span>
+</div>
+<table>
+<tr>
+
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Types</th>
+
+    </tr>
+
+    <tr ng-repeat="pokemon in pokedex.pokelist">
+        <td>{{pokemon.name}}</td>
+        <td>{{pokemon.url}}</td>
+
+
+
+</tr>
+    <tr>{{pokedex.next}}</tr>
+
+
+
+</table>
+<ul>
+    <li ng-repeat="pokemon in pokedex.pokelist">{{pokemon.name | json}}</li>
+</ul>
+

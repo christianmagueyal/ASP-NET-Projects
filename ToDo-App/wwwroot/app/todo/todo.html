@@ -1,0 +1,60 @@
+﻿<h2>Active To-do's:</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th class="h4">Name:</th>
+        <th class="h4">Description:</th>
+        <th class="h4">Due Date:</th>
+        <th class="h4">Tags:</th>
+
+    </tr>
+    <tr ng-repeat="todo in todo.todos" ng-show="todo.active == true">
+        <td>{{todo.name}}</td>
+        <td>{{todo.description}}</td>
+        <td>{{todo.dueDate}}</td>
+        <td>
+            <ul>
+                <li ng-repeat="tag in todo.tags">
+                    {{tag.name | json}}
+                </li>
+            </ul>
+        </td>
+        
+    </tr>
+</table>
+<h3>Add a To-do:</h3>
+<form class="form">
+    <div class="row">
+        <div class="col-xs-4">
+            <label for="name">Name:</label>
+            <input type="text" ng-model="todo.newTodo.name" id="name" >
+        </div>
+        <div class="col-xs-5">
+            <label for="description">Description:</label>
+            <input type="text" ng-model="todo.newTodo.description" id="description">
+        </div>
+       <div class="col-xs-3">
+           <label for="tags">Tags:</label>
+           <input type="text"  id="tags" />
+       </div>
+    </div><br />
+    <div class="row">
+        <div class="col-xs-6">
+            <label for="time">Time:</label>
+            <div id="time" uib-timepicker ng-model="todo.newTodo.dueDate"></div>
+        </div>
+        <div class="col-xs-6">
+            <label for="date">Date:</label>
+            <p class="input-group">
+                <input type="text" id="date" class="form-control" uib-datepicker-popup ng-model="todo.newTodo.dueDate" is-open="todo.datePopupVisible" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="todo.datePopupVisible = !todo.datePopupVisible"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        </div>
+        
+        <button class="btn btn-primary" ng-click="todo.save()">Save</button>
+    <br/><br/><br/>
+</form>

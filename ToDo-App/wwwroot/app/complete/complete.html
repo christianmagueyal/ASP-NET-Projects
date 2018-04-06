@@ -1,0 +1,26 @@
+﻿<h2>Completed To-do's:</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th class="h4">Name:</th>
+        <th class="h4">Description:</th>
+        <th class="h4">Due Date:</th>
+        <!-->th class="h4">Tags:</th-->
+    </tr>
+    <tr ng-repeat="todo in complete.completed" ng-show="todo.active == false">
+        <td>{{todo.name}}</td>
+        <td>{{todo.description}}</td>
+        <td>{{todo.dueDate}}</td>
+         <!--td>
+            <ul>
+                <li ng-repeat="tag in todo.tags">
+                    { {tag.name | json} }
+                </li>
+            </ul>
+        </td-->
+        <td><button class="btn btn-primary" ng-click="complete.remove(todo.todoId)">Delete</button></td>
+        
+    </tr>
+</table>
+        

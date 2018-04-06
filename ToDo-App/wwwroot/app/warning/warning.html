@@ -1,0 +1,35 @@
+﻿
+<br />
+<h2>Current Warning Window:</h2>
+<table class="table">
+    <tr>
+        <th class="h3">Days:</th>
+        <th class="h3">Hours:</th>
+
+    </tr>
+    <tr ng-repeat="warning in warning.warnings">
+        <td>{{warning.days}}</td>
+        <td>{{warning.hours}}</td>
+    </tr>
+</table>
+<h2>Change Warning Window:</h2>
+<form class="form">
+    <div class="row">
+        <div class="col-xs-4">
+            <label for="days">Days:</label>
+            <input type="text" ng-model="warning.newWarning.days" id="days">
+        </div>
+        <div class="col-xs-4">
+            <label for="hours">Hours:</label>
+            <input type="text" ng-model="warning.newWarning.hours" id="hours">
+        </div>
+    <div class="col-xs-4">
+        <button class="btn btn-primary" ng-click="warning.edit(warning.newWarning)">Set</button>
+    </div>
+        
+    </div><br />
+    
+
+    
+</form>
+        

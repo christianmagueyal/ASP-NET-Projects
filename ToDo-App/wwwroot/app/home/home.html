@@ -1,0 +1,25 @@
+﻿<div >
+    <h1 id="header">{{homeController.user.welcome ? 'Welcome ' : 'Get Lost ' }}{{homeController.user.name}}</h1>
+    This is my awesome page.
+    <div>
+        <gravatar email="homeController.user.email"></gravatar>
+
+        <a href="{{homeController.user.website}}">Link</a>
+        <br />
+
+        Click
+        <a href="/api/values">here</a>
+        for values.
+    </div>
+    <br />
+    <nav>
+        <ul>
+            <li ng-repeat="hobby in homeController.user.hobbies"><a ng-href="{{hobby.link}}"> {{hobby.name}}</a></li>
+
+            <li>Home</li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+    </nav>
+
+</div>

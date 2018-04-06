@@ -1,0 +1,16 @@
+﻿    <div class="panel panel-primary"  >
+        <div class="panel-heading">FAQs</div>
+
+        <div ng-if="faqs.faqs.length == 0">There are no FAQs because Mike doesn't care</div>
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" heading="{{faq.question}}" ng-repeat="faq in faqs.faqs">
+                {{faq.answer}}
+            </div>
+        </uib-accordion>
+
+        <ul>
+            <li ng-repeat="value in faqs.values "><button ui-sref="value({id: $index})">{{value}}</button></li>
+
+        </ul>
+        
+    </div>
